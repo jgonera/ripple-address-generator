@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+// vim: ft=javascript
+'use strict'
+
+const RippleAPI = require('ripple-lib').RippleAPI
+
+const api = new RippleAPI()
+const account = api.generateAddress()
+
+console.log('Address:', account.address)
+console.log('Secret:', account.secret)
