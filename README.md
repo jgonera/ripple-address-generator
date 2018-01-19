@@ -91,4 +91,4 @@ reboot
 ```
 
 After rebooting, erase the contents of your USB stick (preferably by formatting
-it).
+it with forced data erase).
