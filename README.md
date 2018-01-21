@@ -130,6 +130,14 @@ funds, I advise you to make two transfers to your new **address**:
    **secret**!).
 2. Transfer the rest of your funds (or as much as you want to securely store).
 
+**Note:** If you're paranoid (and you should be!) you should first create a
+test wallet and only transfer a small amount to it to see whether everything
+described here works as expected. Then, you should verify that using the
+**secret** allows you to transfer funds out of your new wallet back somewhere
+else (e.g. a currency exchange). If everything works, use the same process
+to create your real cold wallet. Don't leave funds in the test wallet after
+its secret has been used online.
+
 
 ## Step 4: Keeping your wallet "cold"
 
