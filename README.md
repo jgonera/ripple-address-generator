@@ -41,8 +41,11 @@ and use the `ubuntu-17.10.1-desktop-amd64.iso` to create a bootable USB stick.
 
 ## Step 2: Generating a new wallet
 
-Boot your computer using the USB stick created in step 1. When a blue
-Unetbootin menu shows up, choose "Default" (just hit Enter).
+Boot your computer using the USB stick created in step 1. For Macs hold the
+Option key when your laptop is booting and you'll be able to boot from the USB
+stick (choose "EFI Boot"). For other computers it depends (e.g. for Dells it's
+often F12 while booting). When a menu shows up, choose the first option, "Try
+Ubuntu without installing" (just hit Enter).
 
 After Ubuntu boots, open the Terminal by clicking on "Activities" in the top
 left corner and typing "Terminal" in the search field. Then connect to the
