@@ -57,11 +57,14 @@ Choose second option ("Diskimage") and click the "..." button. Then, choose the
 Boot your computer using the USB stick created in step 1. When a blue
 Unetbootin menu shows up, choose "Default" (just hit Enter).
 
-After Ubuntu boots, connect to the Internet (WiFi or Ethernet). You can choose
-the WiFi network by clicking on the arrow in the top right corner of the
-screen. Then open the Terminal by clicking on "Activities" in the top left
-corner and typing "Terminal" in the search field. In the terminal run the
-following command to install Git:
+After Ubuntu boots, open the Terminal by clicking on "Activities" in the top
+left corner and typing "Terminal" in the search field. Then connect to the
+Internet (WiFi or Ethernet). You can choose the WiFi network by clicking on the
+arrow in the top right corner of the screen. If you're using a Mac and WiFi
+doesn't work, see [Appendix: Fixing WiFi on
+Macs](#appendix-fixing-wifi-on-macs).
+
+In the terminal run the following command to install Git:
 
 ```
 sudo apt-get install git
@@ -139,3 +142,16 @@ malicious user didn't intercept and store your secret (your wallet is no longer
 Assuming you had 1000 XRP in your wallet and you transferred 100 XRP to
 someone, you should transfer 1000 - 100 = 900 XRP to a new cold wallet (simply
 follow the process you just followed again).
+
+
+## Appendix: Fixing WiFi on Macs
+
+Run the following set of commands:
+
+```
+sudo sed --in-place=.old --expression='/cdrom:/!d' /etc/apt/sources.list
+sudo apt-get install bcmwl-kernel-source
+sudo mv /etc/apt/sources.list.old /etc/apt/sources.list
+```
+
+Now try connecting to WiFi again.
