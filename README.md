@@ -6,8 +6,8 @@ audit as possible and use only libraries offically released and documented by
 Ripple.
 
 A cold wallet is a wallet whose **secret** has never been exposed to the online
-world and therefore, there is no possibility that a malicious software or a
-malicious user intercepted it and will use it to steal your balance.
+world and therefore, there is a very low possibility that malicious software or
+a malicious user intercepted it and would use it to steal your balance.
 
 You do want to ensure this because with cryptocurrencies, contrary to what
 we've been used to in banking, there is no authority that can help you prevent
@@ -120,13 +120,13 @@ funds, I advise you to make two transfers to your new **address**:
    **secret**!).
 2. Transfer the rest of your funds (or as much as you want to securely store).
 
-**Note:** If you're paranoid (and you should be!) you should first create a
-test wallet and only transfer a small amount to it to see whether everything
+**Note:** If you're very paranoid (and you should be!) you should first create
+a test wallet and only transfer a small amount to it to see whether everything
 described here works as expected. Then, you should verify that using the
 **secret** allows you to transfer funds out of your new wallet back somewhere
-else (e.g. a currency exchange). If everything works, use the same process
-to create your real cold wallet. Don't leave funds in the test wallet after
-its secret has been used online.
+else (e.g. a currency exchange). If everything works, use the same process to
+create your real cold wallet. Don't leave funds in the test wallet after its
+secret has been used online.
 
 
 ## Step 4: Keeping your wallet "cold"
@@ -139,7 +139,7 @@ malicious user didn't intercept and store your secret (your wallet is no longer
 
 Assuming you had 1000 XRP in your wallet and you transferred 100 XRP to
 someone, you should transfer 1000 - 100 = 900 XRP to a new cold wallet (simply
-follow the process you just followed again).
+follow the process you just followed again to generate a new cold wallet).
 
 
 ## Appendix: Fixing WiFi on Macs
