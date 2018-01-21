@@ -32,24 +32,11 @@ than sorry. We will create an Ubuntu bootable USB stick for this purpose.
 Download Ubuntu 17.10.1 from the official website:
 http://releases.ubuntu.com/17.10.1/ubuntu-17.10.1-desktop-amd64.iso
 
-Then download SHA256SUMS to verify the integrity and authenticity of the Ubuntu
-image you downloaded from the URL above:
-* http://releases.ubuntu.com/17.10.1/SHA256SUMS
-* http://releases.ubuntu.com/17.10.1/SHA256SUMS.gpg
+After that download Etcher for the operating system you use daily from:
+https://etcher.io/
 
-If you are using Windows or macOS as your regular operating system you will
-also need to download GPG from: https://gpgtools.org/
-
-Follow this tutorial to verify your Ubuntu image download:
-https://help.ubuntu.com/community/VerifyIsoHowto
-
-After that download UNebootin for the operating system you use daily from:
-https://unetbootin.github.io/
-
-Erase all data on the USB stick you are planning to use. Then launch UNetbootin
+Erase all data on the USB stick you are planning to use. Then launch Etcher
 and use the `ubuntu-17.10.1-desktop-amd64.iso` to create a bootable USB stick.
-Choose second option ("Diskimage") and click the "..." button. Then, choose the
-`.iso` file of Ubuntu you downloaded earlier.
 
 
 ## Step 2: Generating a new wallet
