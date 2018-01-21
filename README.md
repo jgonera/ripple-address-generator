@@ -57,7 +57,7 @@ Macs](#appendix-fixing-wifi-on-macs).
 In the terminal run the following command to install Git:
 
 ```
-sudo apt-get install git
+sudo apt-get install --yes git
 ```
 
 Then run the following command to clone this repository:
@@ -148,7 +148,7 @@ Run the following set of commands:
 
 ```
 sudo sed --in-place=.old --expression='/cdrom:/!d' /etc/apt/sources.list
-sudo apt-get install bcmwl-kernel-source
+sudo apt-get install --yes bcmwl-kernel-source
 sudo mv /etc/apt/sources.list.old /etc/apt/sources.list
 ```
 

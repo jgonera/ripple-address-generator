@@ -2,10 +2,29 @@
 // vim: ft=javascript
 'use strict'
 
-const RippleAPI = require('ripple-lib').RippleAPI
+// Check if there is Internet. If no, generate a wallet, if yes, exit.
 
-const api = new RippleAPI()
-const account = api.generateAddress()
+const isDisconnected = new Promise((resolve, reject) => {
+  require('dns').lookup('google.com', err => {
+    if (err && err.code === 'ENOTFOUND') {
+      resolve()
+    } else {
+      reject()
+    }
+  })
+})
 
-console.log('Address:', account.address)
-console.log('Secret:', account.secret)
+isDisconnected.then(() => {
+  // No connection, genrate wallet.
+  const RippleAPI = require('ripple-lib').RippleAPI
+
+  const api = new RippleAPI()
+  const account = api.generateAddress()
+
+  console.log('Address:', account.address)
+  console.log('Secret:', account.secret)
+}, () => {
+  // Internet connection, print error and exit.
+  console.error('It seems you are connected to the Internet. Please disconnect first!')
+  process.exit(1)
+})
