@@ -1,11 +1,11 @@
 {
-  "name": "ripple-address-generator",
+  "name": "ripple-cold-wallet-paranoid",
   "version": "0.0.1",
   "license": "MIT",
   "repository" :
   {
     "type": "git",
-    "url": "https://github.com/jgonera/ripple-address-generator.git"
+    "url": "https://github.com/jgonera/ripple-cold-wallet-paranoid.git"
   },
   "dependencies": {
     "ripple-lib": "0.17.9"
