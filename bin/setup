@@ -5,6 +5,6 @@ CODENAME=`lsb_release --codename | cut -f2`
 
 sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ ${CODENAME} universe multiverse"
 sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ ${CODENAME}-updates universe multiverse"
-sudo apt-get update
-sudo apt-get install --yes nodejs npm
+sudo apt-get update --yes
+sudo apt-get install --yes nodejs npm p7zip-full
 npm install

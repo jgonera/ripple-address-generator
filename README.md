@@ -73,19 +73,37 @@ cd ripple-cold-wallet-paranoid
 bin/setup
 ```
 
-Now **disconnect from the Internet** (turn WiFi off using the arrow in the top
-right corner, unplug Ethernet) and **don't ever connect back using your Ubuntu
-USB stick**. Run the following command to generate a new wallet:
+Now, if you are very paranoid (see [FAQ](#appendix-faq)), **disconnect from the
+Internet** (turn WiFi off using the arrow in the top right corner, unplug
+Ethernet) and **don't ever connect back using your Ubuntu USB stick**.
 
-```
-bin/generate
-```
+After this you have two options.
 
-Your wallet address and associated secret will be displayed. Write them down
-on a piece of paper or store in a secure (enrypted or offline) location. If you
-want to use a printer, connect it directly to your computer (not through a
-network) and make sure that the printer does not save the images of what it
-prints in its internal memory.
+1. To generate a new wallet and display it on the screen run:
+
+   ```
+   bin/generate
+   ```
+
+   Write your wallet address and its secret down on a piece of paper and store
+   in a secure location (or better, several locations). If you want to use a
+   printer, connect it directly to your computer (not through a network) and
+   make sure that the printer does not save the images of what it prints in its
+   internal memory.
+
+2. To generate a new wallet and save it in an encrypted archive run:
+
+   ```
+   bin/generate | 7z a -si -t7z -m0=lzma2 -ms=on -mhe=on -p mywallet.7z
+   ```
+
+   You will be asked to provide a password. [An easy to remember passphrase is
+   better than a cryptic password](https://xkcd.com/936/). Your wallet will be
+   stored in a file called `mywallet.7z` (you can choose a more confusing name
+   if you don't want to make it obvious what it is, e.g. `summerphotos`). You
+   will be able to view this file with `7z e -so mywallet.7z` or any software
+   that supports the 7-Zip format. Store this file in several places (your
+   computer, another USB stick, cloud storage).
 
 Use your **address** to transfer the balance to. Never disclose your **secret**
 and do not type it anywhere unless you want to transfer the funds out of your
@@ -140,6 +158,37 @@ malicious user didn't intercept and store your secret (your wallet is no longer
 Assuming you had 1000 XRP in your wallet and you transferred 100 XRP to
 someone, you should transfer 1000 - 100 = 900 XRP to a new cold wallet (simply
 follow the process you just followed again to generate a new cold wallet).
+
+
+## Appendix: FAQ
+
+### Is this 100% secure?
+
+Nothing ever is. There are still many attack vectors which could be used, e.g.:
+
+* [DNS spoofing](https://en.wikipedia.org/wiki/DNS_spoofing) when downloading
+  Ubuntu or installing packages (done in `bin/setup`). Let's say some malicious
+  code keeps the WiFi connection running even though it's showing up as off.
+* A malicious NPM package that somehow ends up being a dependency of
+  `ripple-lib` (or a fake `ripple-lib` being somehow uploaded to NPM).
+
+However, they are quite unlikely and most of them can be mitigated by remaining
+offline as soon as you fetch all the required code to generate a wallet.
+
+
+### Why should I not connect to the Internet again after generating the wallet?
+
+This is the only way to ensure that your wallet secret is not somehow overtaken
+by a malicious actor. Those situations are unlikely, but imagine that:
+
+* Someone creates a virus that attacks Ubuntu machines and uploads a screenshot
+  of the current screen somewhere.
+* Someone [spoofs the DNS server you're
+  using](https://en.wikipedia.org/wiki/DNS_spoofing) and makes you download an
+  Ubuntu ISO that is modified to capture all terminal output and send it
+  somewhere as soon as you're online.
+* This guide and associated scripts have been devised to steal your wallet
+  (trust nobody!).
 
 
 ## Appendix: Fixing WiFi on Macs
